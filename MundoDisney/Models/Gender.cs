@@ -6,15 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DisneyWorld.Models
 {
-    public class Gender
+    public class Gender:Identifiable
     {
         [Key]
-        public int IdGender { get; set; }
+        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         [Required(ErrorMessage = "{0} es requerido")]
         public byte[] Picture { get; set; }
         [Required(ErrorMessage = "{0} es requerido")]
         [DataType(DataType.Text)]
         public string GenderName { get; set; }
         public List<Movie> AssociatedMovies { get; set; }
+        
     }
 }

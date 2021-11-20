@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DisneyWorld.Models
 {
-    public class Character
+    public class Character:Identifiable
     {
         [Key]
-        public int IdCharacter { get; set; }
+        int Identifiable.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         [Required(ErrorMessage = "{0} es requerido")]
         public byte[] Photo { get; set; }
         [Required(ErrorMessage = "{0} es requerido")]
@@ -23,5 +23,6 @@ namespace DisneyWorld.Models
         [DataType(DataType.Text)]
         public string History { get; set; }
         public List<Movie> AssociatedMovies { get; set; }
+       
     }
 }
