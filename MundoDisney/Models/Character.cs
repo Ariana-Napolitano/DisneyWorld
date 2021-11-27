@@ -9,7 +9,7 @@ namespace DisneyWorld.Models
     public class Character:Identifiable
     {
         [Key]
-        int Identifiable.Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         [Required(ErrorMessage = "{0} es requerido")]
         public byte[] Photo { get; set; }
         [Required(ErrorMessage = "{0} es requerido")]

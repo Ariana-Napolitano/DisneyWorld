@@ -10,6 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DisneyWorld.Data.EFCore;
+using DisneyWorld.Services;
+using DisneyWorld.Services.Implements;
+using DisneyWorld.Repositories.Implements;
 
 namespace DisneyWorld
 {
@@ -27,6 +31,9 @@ namespace DisneyWorld
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
+            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+            services.AddScoped<ICharacterRepository, CharacterRepository>();
+            services.AddScoped(typeof(IGenericService<,>), typeof(GenericService<,>));
             services.AddDbContext<ApplicationDbContext>(options =>
                                         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }

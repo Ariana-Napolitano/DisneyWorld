@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DisneyWorld.Models
 {
-    interface Identifiable
+    public interface Identifiable
     {
         public int Id { get; set; }
     }
